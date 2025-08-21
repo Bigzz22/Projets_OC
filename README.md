@@ -10,11 +10,9 @@ Il regroupe différents exercices, TP et projets complets autour du développeme
 
 Voici les principaux dossiers et projets inclus :
 
-- **Projet_1_Analyse_donnees** → Exploration et visualisation des données.
-- **Projet_2_Developpement_web** → Création d’un site web dynamique.
-- **Projet_3_Machine_learning** → Mise en place de modèles supervisés.
-- **Projet_4_Deep_learning** → Entraînement de réseaux de neurones CNN.
-- **Projet_5_API_FastAPI** → Création et déploiement d’une API REST.
-- **Projet_6_Big_data** → Traitement et analyse de données massives avec Spark.
-
-*(Les noms exacts peuvent être adaptés à tes dossiers.)*
+- **Projet_2_Data_preparation** → Préparez des données pour un organisme de santé publique
+- **Projet_3_Anticipez_les_besoins_de_consommation** → Anticipez les besoins en consommation de bâtiments.
+- **Projet_4_Segmentez_des_clients** → Segmentez des clients d'un site e-commerce.
+- **Projet_5_Categoriser_des_questions** → Catégorisez automatiquement des questions.
+- **Projet_6_Classer_des_images** → Classez des images à l'aide d'algorithmes de Deep Learning.
+- **Projet_8_Traitement_env_big_data** → Réalisez un traitement dans un environnement Big Data sur le Cloud.
