@@ -91,12 +91,11 @@ L’architecture a été optimisée via une méthode de Neural Architecture Sear
 
 ## 📊 Résultats
 Comparaison entre les deux modèles :
-Modèle	ResNet-50	EfficientNetV2S
-Accuracy Top-1	89.29 %	95.54 %
-Accuracy Top-3	97.32 %	99.55 %
-F1-macro score	0.8708	0.9321
-Nombre de paramètres	23.6M	20.3M
-Temps d’inférence GPU	219.8 ms	168.3 ms
+| Modèle | Accuracy Top-1 | Accuracy Top-3 | F1-score |
+|------|------|------|------|
+| ResNet-50 | 89.29 % | 97.32 % | 0.8708 |
+| EfficientNetV2S | **95.54 %** | **99.55 %** | **0.9321** |
+
 Conclusion
 Le modèle EfficientNetV2S :
 - améliore significativement la précision
