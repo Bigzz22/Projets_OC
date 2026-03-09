@@ -15,4 +15,4 @@ Voici les principaux dossiers et projets inclus :
 - **Projet_4_Segmentez_des_clients** → Segmentez des clients d'un site e-commerce.
 - **Projet_5_Categoriser_des_questions** → Catégorisez automatiquement des questions.
 - **Projet_6_Classer_des_images** → Classez des images à l'aide d'algorithmes de Deep Learning.
-- **Projet_8_Traitement_env_big_data** → Réalisez un traitement dans un environnement Big Data sur le Cloud.
+- **Projet_7_Preuve de concept** → Réalisez une preuve de concept pour améliorer les performances d'un modèle précédent.
