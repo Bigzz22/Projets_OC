@@ -41,7 +41,7 @@ Cette diversité rend la tâche de classification plus réaliste mais aussi plus
 ---
 
 ## 🧠 Méthodologie
-1️⃣ Prétraitement des images
+Prétraitement des images
 Avant l’entraînement des modèles, plusieurs étapes de préparation des données ont été appliquées :
 Transformations
 Resize : uniformiser la taille des images
