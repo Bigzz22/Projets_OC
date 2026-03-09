@@ -1,5 +1,5 @@
 # 🐶 Classification d’images de races de chiens – Proof of Concept
-##📌 Contexte du projet
+## 📌 Contexte du projet
 
 Ce projet a été réalisé dans le cadre d’un test technique pour DataSpace, une entreprise spécialisée dans la conception de solutions de data science et d’intelligence artificielle.
 L’objectif est de réaliser une veille technologique en machine learning, puis de mettre en place une preuve de concept (Proof of Concept) afin d’améliorer les performances d’un modèle existant de classification d’images.
@@ -10,7 +10,7 @@ Les résultats sont ensuite présentés via un dashboard interactif déployé su
 
 ---
 
-# 🎯 Objectifs
+## 🎯 Objectifs
 Réaliser une veille technologique sur les modèles récents en deep learning.
 Implémenter un nouvel algorithme publié récemment.
 Comparer ses performances avec un modèle de référence plus ancien.
@@ -23,7 +23,7 @@ Développer un dashboard interactif permettant de tester le modèle de classific
 
 ---
 
-# 📂 Données
+## 📂 Données
 Jeu de données utilisé : Stanford Dogs Dataset
 Source : http://vision.stanford.edu/aditya86/ImageNetDogs/
 Caractéristiques du dataset
@@ -40,7 +40,7 @@ Cette diversité rend la tâche de classification plus réaliste mais aussi plus
 
 ---
 
-# 🧠 Méthodologie
+## 🧠 Méthodologie
 1️⃣ Prétraitement des images
 Avant l’entraînement des modèles, plusieurs étapes de préparation des données ont été appliquées :
 Transformations
@@ -53,7 +53,7 @@ ShiftScaleRotate → translation, zoom, rotation
 Horizontal / Vertical Flip → invariance spatiale
 RandomBrightnessContrast → variations de luminosité
 MedianBlur → robustesse au bruit
-## 🤖 Approche 1 : Modèle baseline (ResNet-50)
+### 🤖 Approche 1 : Modèle baseline (ResNet-50)
 Le modèle de référence utilisé est ResNet-50, un réseau convolutionnel profond très utilisé en vision par ordinateur.
 Le modèle est initialisé avec des poids pré-entraînés sur ImageNet.
 Hyperparamètres
@@ -62,7 +62,7 @@ Learning rate : 1e-5
 Batch size : 32
 Epochs : 30
 Dropout : 0.5
-## 🚀 Approche 2 : Modèle récent – EfficientNetV2
+### 🚀 Approche 2 : Modèle récent – EfficientNetV2
 Suite à la veille technologique, le modèle retenu est EfficientNetV2.
 Article de référence
 EfficientNetV2: Smaller Models and Faster Training
@@ -77,7 +77,7 @@ Contrairement aux Vision Transformers, EfficientNetV2 est souvent plus performan
 
 ---
 
-# ⚙️ Nouveaux concepts introduits
+## ⚙️ Nouveaux concepts introduits
 Fused-MBConv
 EfficientNetV2 remplace les blocs MBConv traditionnels par des Fused-MBConv :
 meilleure efficacité GPU
@@ -89,7 +89,7 @@ L’architecture a été optimisée via une méthode de Neural Architecture Sear
 
 ---
 
-# 📊 Résultats
+## 📊 Résultats
 Comparaison entre les deux modèles :
 Modèle	ResNet-50	EfficientNetV2S
 Accuracy Top-1	89.29 %	95.54 %
@@ -106,7 +106,7 @@ Cependant, sur CPU, le temps d’inférence peut être légèrement supérieur.
 
 ---
 
-# 📊 Dashboard
+## 📊 Dashboard
 Un dashboard interactif a été développé avec Streamlit pour démontrer la preuve de concept.
 Fonctionnalités principales :
 exploration du dataset
@@ -116,7 +116,7 @@ affichage des top-3 prédictions
 
 ---
 
-# ☁️ Déploiement
+## ☁️ Déploiement
 Le dashboard a été déployé sur le cloud via :
 Docker
 DockerHub
@@ -128,7 +128,7 @@ Déploiement sur Azure App Service
 
 ---
 
-# ⚙️ Technologies utilisées
+## ⚙️ Technologies utilisées
 Langage
 Python 3.10
 Bibliothèques principales
@@ -145,7 +145,7 @@ DockerHub
 
 ---
 
-# 👤 Auteur
+## 👤 Auteur
 Benjamin Bigot
 📧 benjamin.bigot22@gmail.com
 🔗 https://www.linkedin.com/in/benjamin-bigot-69b0581a3/
