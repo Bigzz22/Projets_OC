@@ -1,54 +1,151 @@
-🐾 Classification Canine : Preuve de Concept (PoC) SOTA
-Ce projet présente une amélioration significative d'un système de classification d'images de chiens en remplaçant une architecture classique par un modèle issu de la recherche récente. Réalisé pour le compte de DataSpace, ce projet démontre une méthodologie complète allant de la veille technologique au déploiement cloud. 
+#🐶 Classification d’images de races de chiens – Proof of Concept
+##📌 Contexte du projet
 
-🎯 Objectifs
-Veille Technologique : Identifier une architecture plus performante que les baselines standards (ResNet). 
+Ce projet a été réalisé dans le cadre d’un test technique pour DataSpace, une entreprise spécialisée dans la conception de solutions de data science et d’intelligence artificielle.
+L’objectif est de réaliser une veille technologique en machine learning, puis de mettre en place une preuve de concept (Proof of Concept) afin d’améliorer les performances d’un modèle existant de classification d’images.
+Le projet consiste à développer un modèle capable de prédire la race d’un chien à partir d’une image, puis à comparer :
+un modèle baseline (ResNet-50)
+un modèle plus récent issu de la recherche : EfficientNetV2
+Les résultats sont ensuite présentés via un dashboard interactif déployé sur le cloud.
 
-Performance : Améliorer l'accuracy et réduire le temps d'inférence sur GPU. 
-+1
+---
 
-Industrialisation : Développer un dashboard interactif et le déployer via Docker. 
-+1
+# 🎯 Objectifs
+Réaliser une veille technologique sur les modèles récents en deep learning.
+Implémenter un nouvel algorithme publié récemment.
+Comparer ses performances avec un modèle de référence plus ancien.
+Évaluer les modèles selon :
+la précision
+le score F1
+le temps d’inférence
+la complexité du modèle.
+Développer un dashboard interactif permettant de tester le modèle de classification.
 
-📊 Jeu de Données : Stanford Dogs
-Le projet s'appuie sur le dataset Stanford Dogs, comprenant plus de 20 000 images réparties par races. 
+---
 
-Prétraitement : Uniformisation de la taille (224×224×3) et normalisation des pixels. 
-+1
+# 📂 Données
+Jeu de données utilisé : Stanford Dogs Dataset
+Source : http://vision.stanford.edu/aditya86/ImageNetDogs/
+Caractéristiques du dataset
+20 580 images
+120 races de chiens
+Images de tailles variables
+Organisation : 1 dossier par race
+Les images présentent une grande variabilité :
+angles de prise de vue
+conditions d’éclairage
+arrière-plans
+positions des chiens
+Cette diversité rend la tâche de classification plus réaliste mais aussi plus complexe.
 
-Data Augmentation : Utilisation d'Albumentations (Equalization, ShiftScaleRotate, Flip, RandomBrightnessContrast) pour renforcer la robustesse du modèle. 
+---
 
-🧠 Architecture & Innovation
-La solution repose sur le modèle EfficientNetV2S, basé sur l'article pivot "EfficientNetV2: Smaller Models and Faster Training" (Tan & Le, 2021). 
-+1
+# 🧠 Méthodologie
+1️⃣ Prétraitement des images
+Avant l’entraînement des modèles, plusieurs étapes de préparation des données ont été appliquées :
+Transformations
+Resize : uniformiser la taille des images
+Normalization : centrer et réduire les pixels
+Equalization : améliorer le contraste local
+Data Augmentation
+Afin d’améliorer la capacité de généralisation du modèle :
+ShiftScaleRotate → translation, zoom, rotation
+Horizontal / Vertical Flip → invariance spatiale
+RandomBrightnessContrast → variations de luminosité
+MedianBlur → robustesse au bruit
+## 🤖 Approche 1 : Modèle baseline (ResNet-50)
+Le modèle de référence utilisé est ResNet-50, un réseau convolutionnel profond très utilisé en vision par ordinateur.
+Le modèle est initialisé avec des poids pré-entraînés sur ImageNet.
+Hyperparamètres
+Optimizer : Adam
+Learning rate : 1e-5
+Batch size : 32
+Epochs : 30
+Dropout : 0.5
+## 🚀 Approche 2 : Modèle récent – EfficientNetV2
+Suite à la veille technologique, le modèle retenu est EfficientNetV2.
+Article de référence
+EfficientNetV2: Smaller Models and Faster Training
+Mingxing Tan & Quoc V. Le – Google Research (2021)
+https://arxiv.org/pdf/2104.00298v3
+Pourquoi ce modèle ?
+Meilleure efficacité computationnelle
+Temps d’entraînement réduit
+Architecture optimisée pour les datasets de taille moyenne
+Meilleure précision globale
+Contrairement aux Vision Transformers, EfficientNetV2 est souvent plus performant lorsque la taille du dataset est limitée.
 
-Pourquoi ce choix ?
+---
 
-Architecture optimisée : Utilisation de blocs Fused-MBConv (remplaçant les MBConv classiques) pour accélérer l'entraînement et l'inférence. 
-+1
+# ⚙️ Nouveaux concepts introduits
+Fused-MBConv
+EfficientNetV2 remplace les blocs MBConv traditionnels par des Fused-MBConv :
+meilleure efficacité GPU
+entraînement plus rapide
+Training-Aware Neural Architecture Search (NAS)
+L’architecture a été optimisée via une méthode de Neural Architecture Search prenant en compte :
+- la précision
+- la vitesse d’entraînement
 
-Adaptabilité : Plus performant sur des datasets de taille moyenne qu'un Vision Transformer (ViT). 
+---
 
-Efficacité : Moins de paramètres (20,3M contre 23,6M pour ResNet-50) et moins de FLOPs. 
-+1
+# 📊 Résultats
+Comparaison entre les deux modèles :
+Modèle	ResNet-50	EfficientNetV2S
+Accuracy Top-1	89.29 %	95.54 %
+Accuracy Top-3	97.32 %	99.55 %
+F1-macro score	0.8708	0.9321
+Nombre de paramètres	23.6M	20.3M
+Temps d’inférence GPU	219.8 ms	168.3 ms
+Conclusion
+Le modèle EfficientNetV2S :
+- améliore significativement la précision
+- utilise moins de paramètres
+- possède un temps d’inférence plus rapide sur GPU
+Cependant, sur CPU, le temps d’inférence peut être légèrement supérieur.
 
-📈 Résultats Comparatifs (Baseline vs SOTA)
-La preuve de concept valide la supériorité de l'approche choisie :
+---
 
-Métrique	Baseline (ResNet-50)	SOTA (EfficientNetV2S)
-Accuracy Top-1	89.29%	95.54%
-F1-macro Score	0.8708	0.9321
-Temps d’inférence (GPU)	219,8 ms	168,3 ms
-Poids (Paramètres)	23,6 M	20,3 M
-Note : Bien que plus performant sur GPU, le modèle présente un temps d'inférence légèrement plus long sur CPU par rapport à la baseline. 
+# 📊 Dashboard
+Un dashboard interactif a été développé avec Streamlit pour démontrer la preuve de concept.
+Fonctionnalités principales :
+exploration du dataset
+upload d’une image
+prédiction de la race du chien
+affichage des top-3 prédictions
 
-🚀 Déploiement & Dashboard
-Une interface interactive a été développée pour permettre aux utilisateurs de tester le modèle en conditions réelles. 
+---
 
-Framework : Streamlit 
+# ☁️ Déploiement
+Le dashboard a été déployé sur le cloud via :
+Docker
+DockerHub
+Azure App Service
+Pipeline de déploiement
+Création de l’image Docker
+Push de l’image sur DockerHub
+Déploiement sur Azure App Service
 
-Conteneurisation : Image Docker hébergée sur DockerHub. 
+---
 
-Cloud : Déploiement sur Azure App Service. 
+# ⚙️ Technologies utilisées
+Langage
+Python 3.10
+Bibliothèques principales
+TensorFlow / Keras → deep learning
+NumPy / Pandas → manipulation des données
+Matplotlib / Seaborn → visualisations
+OpenCV / PIL → traitement d’images
+Outils
+Jupyter Notebook
+Streamlit
+Docker
+Azure App Service
+DockerHub
 
-Fonctionnalités : Exploration de la distribution des races et prédiction en temps réel sur image uploadée.
+---
+
+# 👤 Auteur
+Benjamin Bigot
+📧 benjamin.bigot22@gmail.com
+🔗 https://www.linkedin.com/in/benjamin-bigot-69b0581a3/
