@@ -1,4 +1,4 @@
-#🐶 Classification d’images de races de chiens – Proof of Concept
+# 🐶 Classification d’images de races de chiens – Proof of Concept
 ##📌 Contexte du projet
 
 Ce projet a été réalisé dans le cadre d’un test technique pour DataSpace, une entreprise spécialisée dans la conception de solutions de data science et d’intelligence artificielle.
